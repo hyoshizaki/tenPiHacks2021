@@ -1,0 +1,30 @@
+//
+//  ViewController.swift
+//  10piHacks2021(5-29-2021)
+//
+//  Created by Shuji Yoshizaki on 5/29/21.
+//
+
+import UIKit
+import SpriteKit
+
+class ViewController: UIViewController {
+    @IBOutlet weak var userInputTextField: UITextField!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+    
+    
+    @IBAction func didTapButton(){
+            let vc = storyboard?.instantiateViewController(identifier: "secondView") as! secondViewController
+        vc.userInput = userInputTextField.text!
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+        
+        
+        }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    }
+}
